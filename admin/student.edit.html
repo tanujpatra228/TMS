@@ -1,0 +1,209 @@
+<?php 
+
+?>
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Edit Student Profile</title>
+	
+	<script src="http://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
+	
+	<!-- Latest compiled and minified CSS -->
+		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+		
+	<!-- Optional theme -->
+		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
+	
+	<link href="./Carousel Template for Bootstrap_files/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Custom styles for this template -->
+    <link href="./Carousel Template for Bootstrap_files/carousel.css" rel="stylesheet">
+	
+	<!-- fontawesome CDN -->
+	<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
+	
+	<style type="text/css" rel="stylesheet" >
+		.container
+		{
+			margin-top:40px;
+			padding:20px;
+		}
+		#img_box
+		{
+			background-image: url('images/default_avatar_0.png'); 
+			background-size: 100%;
+			background-repeat: no-repeat;
+			background-color:#ddd;
+			height:150px; 
+			width:150px;
+		}
+		#exit
+		{
+				width:140px;
+		}
+	
+	</style>
+	
+	<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+	
+	<!--<link rel="stylesheet" type="text/css" href="../bootstrap/css/bootstrap.min.css">
+	<script type="text/javascript" src="../bootstrap/jquery/jquery2.2.4.min.js"></script>
+	<script type="text/javascript" src="../bootstrap/js/bootstrap.min.js"></script>
+
+	<script type="text/javascript" src="../js/tms_students.js"></script>-->
+	
+	<script type="text/javascript">
+		$(function(){
+			$('#img_box').click(function(){
+				$('#s_image').click();
+					console.log($('#s_image').val());
+			});
+		});
+		function readURL(input) {
+					if (input.files && input.files[0]) {
+					var reader = new FileReader();
+
+					reader.onload = function (e) {
+						$('#img_box')
+							.css({'background-image':'url('+ e.target.result+')'});
+					};
+
+					reader.readAsDataURL(input.files[0]);
+				}
+			}
+	</script>
+</head>
+<body>
+	<div class="container">
+		<form name="student_update_form" id="student_update_form" action="" method="POST">
+			<div class="form-group">
+				<div class="row">
+					<div class="col-md-12">
+						<div id="img_box" class="rounded float-right border"></div>
+						<input type="file" accept="image/jpg, image/jpeg, image/png" name="s_image" class="s_image input" id="s_image" style="display:none;" onchange="readURL(this);"/>
+					</div>
+				</div>
+			</div>
+			<div class="form-group">
+				<div class="row">
+					<div class="col-md-12">
+						<label for="f_name">Student Details:</label>
+					</div>
+				</div>
+				<div class="row">
+					<div class="col-md-6">
+						<input type="text" placeholder="First Name" name="f_name[]" class="f_name input form-control" id="f_name">
+					</div>
+					<div class="col-md-6">
+						<input type="text" placeholder="Last Name" name="l_name[]" class="l_name input form-control" id="l_name">
+					</div>
+				</div>
+			</div>
+			
+			<div class="form-group">
+				<div class="row">
+					<div class="col-md-6">
+						<select name="s_sex[]" id="s_sex" class="s_sex input form-control">
+							<option disabled selected>Gender</option>
+							<option value="male">Male</option>
+							<option value="female">Female</option>
+						</select>
+					</div>
+					<div class="col-md-6">
+						<select name="s_std[]" id="s_std" class="s_std input form-control">
+							<option disabled selected>STD</option>
+						</select>
+					</div>
+					
+				</div>
+			</div>
+			
+			<div class="form-group">
+				<div class="row">
+					<div class="col-md-6">
+						<select name="s_branch[]" id="s_branch" class="s_branch input form-control">
+							<option disabled selected>Branch</option>
+						</select>
+					</div>
+			</div>
+			
+			<div class="form-group">
+				<div class="row">
+					<div class="col-md-12">
+						<label for="f_name">Parential Details:</label>
+					</div>
+				</div>
+				<div class="row">
+					<div class="col-md-6">
+						<input type="text" placeholder="Father Name" name="s_father_name[]" class="s_father_name input form-control" id="s_father_name">
+					</div>
+					<div class="col-md-6">
+						<input type="text" placeholder="Mother Name" name="s_mother_name[]" class="s_mother_name input form-control" id="s_mother_name">
+					</div>
+				</div>
+			</div>
+			<div class="form-group">
+				<div class="row">
+					<div class="col-md-12">
+						<label for="f_name">Contact Details:</label>
+					</div>
+				</div>
+				<div class="row">
+					<div class="col-md-6">
+						<input type="tel" placeholder="Phone No."name="s_phn[]" class="s_phn input form-control" id="s_phn" />
+					</div>
+					<div class="col-md-6">
+						<input type="email" placeholder="Email-Id" name="s_email[]" class="s_email input form-control" id="s1_email" />
+					</div>
+				</div>
+			</div>
+			<div class="form-group">
+				<div class="row">
+					<div class="col-md-12">
+						<label for="f_name">Address Details:</label>
+					</div>
+				</div>
+				<div class="row">
+					<div class="col-md-6">
+						<textarea placeholder="Address" name="s_address[]" class="s_address input form-control" id="s_address" rows="3" ></textarea>
+					</div>
+				</div>
+			</div>	
+			<div class="form-group">
+				<div class="row">
+					<div class="col-md-6">
+						<select name="s_state[]" id="s1_state" class="s_state input form-control">
+							<option disabled selected>State</option>
+						</select>
+					</div>
+					<div class="col-md-6">
+						<select name="s_city[]" id="s_city" class="s_city input form-control">
+							<option disabled selected>City</option>
+						</select>
+					</div>
+				</div>
+			</div>	
+			<div class="form-group">
+				<div class="row">
+					<div class="col-md-12 text-center">
+						<button type="button" id="save_exit" class="btn btn-outline-success btn-lg">Save &#38; Exit</button>
+						
+						<button type="button" id="exit" class="btn btn-outline-danger btn-lg">Exit</button>
+					</div>
+				</div>
+			</div>	
+		</form>
+	
+	</div>
+</body>
+</html>
+	
+	
+	
+
+	
+	
+	
+	

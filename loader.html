@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+ <!--css/js files are also supported, you can
+ refer them using relative path.
+ Save all files first, including html file
+ to use this feature. -->
+
+
+	<style type="text/css">
+    #loader{
+		text-align: center;
+		padding: 100px 0 0 0;
+		background-color: rgba(0,0,0,0.5);
+ 	}
+
+	#loading 
+	{
+		-webkit-animation: rotation 2s infinite linear;
+	}
+
+	@-webkit-keyframes rotation 
+	{
+		from {
+				-webkit-transform: rotate(0deg);
+		}
+		to {
+				-webkit-transform: rotate(359deg);
+		}
+	}
+    </style>
+</head>
+<body>
+	<div id="loader">
+		<img id="loading" src="images/TMS_logo.png" height="100" />
+	</div>
+</body>
+</html>
+
