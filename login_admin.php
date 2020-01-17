@@ -139,12 +139,12 @@
 		  </div>
 
 		  <div class="form-label-group">
-		    <input type="email" id="inputEmail" class="form-control" name="email" placeholder="Email address" required autofocus>
+		    <input type="email" id="inputEmail" class="form-control" name="email" placeholder="Email address" value="tanujpatra2019@gmail.com" required autofocus>
 		    <label for="inputEmail">Email address</label>
 		  </div>
 
 		  <div class="form-label-group">
-		    <input type="password" id="inputPassword" class="form-control" name="pwd" placeholder="Password" required>
+		    <input type="password" id="inputPassword" class="form-control" name="pwd" placeholder="Password" value="123456789" required>
 		    <label for="inputPassword">Password</label>
 		  </div>
 

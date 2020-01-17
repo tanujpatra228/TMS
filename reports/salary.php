@@ -41,13 +41,13 @@ $conn = connection('tms');
 		$to_date = $_POST['to_date'];
 
 		if (isset($_POST['staffId'])) {
-			echo '1 '.$staffId = $_POST['staffId'];
+			$staffId = $_POST['staffId'];
 		}
 		else{
 			$staffId = '%';
 		}
 		if (isset($_POST['branchId'])) {
-			echo '2 '.$branchId = $_POST['branchId'];
+			$branchId = $_POST['branchId'];
 		}
 		else{
 			$branchId = '%';

@@ -1465,7 +1465,7 @@ elseif ($_SESSION['type'] == 'staff') {
 	echo'<script type="text/javascript"> course_array = '.$course_array.';</script>';
 
 		$date = date("m");
-		$conn = connection('epiz_23787909_tms');
+		$conn = connection('tms');
 		$q = "SELECT COUNT(*) AS totPresent FROM `tbl_attendence` WHERE Id LIKE '".$_SESSION['staffId']."' AND `date` LIKE '%-".$date."-%'";
 		$totPresent = mysqli_fetch_array(mysqli_query($conn, $q));
 		mysqli_close($conn);
