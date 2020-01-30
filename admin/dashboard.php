@@ -923,7 +923,7 @@ if ($_SESSION['type'] == 'admin') {
 
 		// FUNCTION to Remove new added tr
 		function remove_tr(ele,pane){
-			var tr = '#'+ele;
+				var tr = '#'+ele;
 				//alert('removing '+tr);
 				console.log(tr);
 				$(tr).remove();
